@@ -5,19 +5,22 @@ import Counter from '../../UI/Counter/Counter';
 /*
 *   食物组件
 * */
-const Meal = () => {
+const Meal = ({
+    data
+}) => {
+    // console.log(data)
     return (
         <div className={classes.Meal}>
             <div className={classes.ImgBox}>
-                <img alt='' src="/img/meals/1.png"/>
+                <img alt='' src={data.img} />
             </div>
             <div>
-                <h2 className={classes.Title}>汉堡包</h2>
-                <p className={classes.Desc}>百分百纯牛肉配搭爽脆酸瓜洋葱粒与美味番茄酱经典滋味让你无法抵挡！</p>
+                <h2 className={classes.Title}>{data.title}</h2>
+                <p className={classes.Desc}>{data.desc}</p>
                 <div className={classes.PriceWrap}>
-                    <span className={classes.Price}>12</span>
+                    <span className={classes.Price}>{data.price}</span>
                     {/* <div>数量</div> */}
-                    <Counter amount={2} />
+                    <Counter amount={data.amount} />
                 </div>
             </div>
         </div>
