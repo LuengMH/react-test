@@ -1,15 +1,24 @@
 import React from 'react';
-import './meal.less';
+import classes from "./meal.module.css";
+import Counter from '../../UI/Counter/Counter';
 
+/*
+*   食物组件
+* */
 const Meal = () => {
     return (
-        <div className='meal-wrap'>
-            <div className='meal-img-wrap'>
-                <img src="/img/meals/1.png" alt="" />
+        <div className={classes.Meal}>
+            <div className={classes.ImgBox}>
+                <img alt='' src="/img/meals/1.png"/>
             </div>
-            <div className='meal-desc-wrap'>
-                <h2 className='meal-desc-title'>汉堡包</h2>
-                <p className='meal-desc-font'>百分百纯牛肉配搭爽脆酸瓜洋葱粒与美味番茄酱经典滋味让你无法抵挡！</p>
+            <div>
+                <h2 className={classes.Title}>汉堡包</h2>
+                <p className={classes.Desc}>百分百纯牛肉配搭爽脆酸瓜洋葱粒与美味番茄酱经典滋味让你无法抵挡！</p>
+                <div className={classes.PriceWrap}>
+                    <span className={classes.Price}>12</span>
+                    {/* <div>数量</div> */}
+                    <Counter amount={2} />
+                </div>
             </div>
         </div>
     );
