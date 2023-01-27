@@ -6,9 +6,10 @@ import Counter from '../../UI/Counter/Counter';
 *   食物组件
 * */
 const Meal = ({
-    data
+    data,
+    onAdd,
+    onSub
 }) => {
-    // console.log(data)
     return (
         <div className={classes.Meal}>
             <div className={classes.ImgBox}>
@@ -20,7 +21,11 @@ const Meal = ({
                 <div className={classes.PriceWrap}>
                     <span className={classes.Price}>{data.price}</span>
                     {/* <div>数量</div> */}
-                    <Counter amount={data.amount} />
+                    <Counter
+                        meal={data}
+                        onSub={onSub}
+                        onAdd={onAdd}
+                        />
                 </div>
             </div>
         </div>

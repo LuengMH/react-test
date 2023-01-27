@@ -27,17 +27,32 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 * */
 
 const Counter = (props) => {
+
+    // 点击添加按钮的事件
+    const addButtonHandler = () => {
+        props.onAdd(props.meal);
+    }
+
+    // 点击添加按钮的事件
+    const subButtonHandler = () => {
+        props.onSub(props.meal);
+    }
     return (
         <div className={classes.Counter}>
             {
-                (props.amount > 0 && props.amount !== 0) ? (
+                (props.meal.amount > 0 && props.meal.amount !== 0) ? (
                     <>
-                        <button className={classes.Less}><FontAwesomeIcon icon={faMinus} /></button>
-                        <span className={classes.Count}>{props.amount}</span>
+                        <button onClick={subButtonHandler} className={classes.Less}><FontAwesomeIcon icon={faMinus} /></button>
+                        <span className={classes.Count}>{props.meal.amount}</span>
                     </>
                 ) : null
             }
-            <button className={classes.Add}><FontAwesomeIcon icon={faPlus} /></button>
+            <button
+                className={classes.Add}
+                onClick={addButtonHandler}
+            >
+                <FontAwesomeIcon icon={faPlus} />
+            </button>
         </div>
     );
 };
