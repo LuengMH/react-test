@@ -3,6 +3,7 @@ import './app.less';
 import Meals from './Components/Meals/Meals';
 import MockData from './mockData';
 import CartContext from './Components/store/cart-context';
+import FilterMeal from './Components/UI/FilterMeal/FilterMeal';
 
 
 const App = () => {
@@ -75,9 +76,16 @@ const App = () => {
         setShopCartData(newCart);
     }
 
+    // 过滤商品
+    const filterMealHandler = (keyword) => {
+        const newFilterMeals = MockData.filter(item => item.title.indexOf(keyword) !== -1 )
+        setMealData(newFilterMeals);
+    }
+
     if (!mealData) return;
     return (
         <CartContext.Provider value={{addMealHandler, subMealHandler}}>
+            <FilterMeal onFilter={filterMealHandler} />
             <div className='app-wrap'>
                 <Meals
                     mealData={mealData}
