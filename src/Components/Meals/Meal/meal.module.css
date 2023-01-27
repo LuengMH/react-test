@@ -21,14 +21,15 @@ img{
 
 .Title{
     font-weight: normal;
-    font-size: 18px;
+    font-size: 36rem;
+    font-weight: bold;
     margin: 0;
 }
 
 .Desc{
     color: #666;
     margin: 0;
-    font-size: 12px;
+    font-size: 24rem;
     padding-right: 30rem;
 }
 
@@ -41,10 +42,10 @@ img{
 
 .Price{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 36rem;
 }
 
 .Price::before{
     content: '￥';
-    font-size: 12px;
+    font-size: 24rem;
 }

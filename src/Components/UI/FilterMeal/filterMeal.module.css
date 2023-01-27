@@ -23,10 +23,10 @@
     width: 680rem;
     height: 70rem;
     border: none;
-    border-radius: 16px;
+    border-radius: 32rem;
     background-color: #f2f2f2;
-    padding-left: 70rem;
-    font-size: 16px;
+    padding-left: 80rem;
+    font-size: 28rem;
     color: #666;
     /* text-indent: 0; */
     outline: none;
@@ -34,7 +34,7 @@
 
 .icon{
     color: #aaa;
-    font-size: 20px;
+    font-size: 36rem;
     position: absolute;
     left: 20rem;
     /* background-color: #bfa; */
