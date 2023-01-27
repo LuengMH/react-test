@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './app.less';
 import Meals from './Components/Meals/Meals';
 import MockData from './mockData';
+import CartContext from './Components/store/cart-context';
 
 
 const App = () => {
@@ -76,13 +77,13 @@ const App = () => {
 
     if (!mealData) return;
     return (
-        <div className='app-wrap'>
-            <Meals
-                mealData={mealData}
-                onSub={subMealHandler}
-                onAdd={addMealHandler}
-            />
-        </div>
+        <CartContext.Provider value={{addMealHandler, subMealHandler}}>
+            <div className='app-wrap'>
+                <Meals
+                    mealData={mealData}
+                />
+            </div>
+        </CartContext.Provider>
     );
 };
 

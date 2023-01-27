@@ -3,7 +3,7 @@ import Meal from './Meal/Meal';
 import classes from './Meals.module.css';
 
 const Meals = ({
-    mealData, onAdd, onSub
+    mealData
 }) => {
     return (
         <div className={classes.Meals}>
@@ -11,8 +11,6 @@ const Meals = ({
                 return (
                     <Meal
                         key={item.id}
-                        onAdd={onAdd}
-                        onSub={onSub}
                         data={item}
                         />
                 );

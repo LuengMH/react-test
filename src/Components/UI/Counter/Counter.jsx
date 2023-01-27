@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import classes from './counter.module.css';
 // 引入字体图标 fontawesone
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import CartContext from '../../store/cart-context';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -28,14 +29,18 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 const Counter = (props) => {
 
+    const ctx = useContext(CartContext)
+
     // 点击添加按钮的事件
     const addButtonHandler = () => {
-        props.onAdd(props.meal);
+        // props.onAdd(props.meal);
+        ctx.addMealHandler(props.meal);
     }
 
     // 点击添加按钮的事件
     const subButtonHandler = () => {
-        props.onSub(props.meal);
+        // props.onSub(props.meal);
+        ctx.subMealHandler(props.meal);
     }
     return (
         <div className={classes.Counter}>

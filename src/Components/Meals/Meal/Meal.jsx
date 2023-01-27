@@ -7,8 +7,6 @@ import Counter from '../../UI/Counter/Counter';
 * */
 const Meal = ({
     data,
-    onAdd,
-    onSub
 }) => {
     return (
         <div className={classes.Meal}>
@@ -23,8 +21,6 @@ const Meal = ({
                     {/* <div>数量</div> */}
                     <Counter
                         meal={data}
-                        onSub={onSub}
-                        onAdd={onAdd}
                         />
                 </div>
             </div>
