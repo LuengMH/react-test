@@ -4,7 +4,7 @@ import Meals from './Components/Meals/Meals';
 import MockData from './mockData';
 import CartContext from './Components/store/cart-context';
 import FilterMeal from './Components/UI/FilterMeal/FilterMeal';
-
+import Cart from './Components/UI/Cart/Cart';
 
 const App = () => {
     const [mealData, setMealData] = useState(null);
@@ -84,12 +84,13 @@ const App = () => {
 
     if (!mealData) return;
     return (
-        <CartContext.Provider value={{addMealHandler, subMealHandler}}>
+        <CartContext.Provider value={{...shopCartData,addMealHandler, subMealHandler}}>
             <FilterMeal onFilter={filterMealHandler} />
             <div className='app-wrap'>
                 <Meals
                     mealData={mealData}
                 />
+                <Cart />
             </div>
         </CartContext.Provider>
     );
