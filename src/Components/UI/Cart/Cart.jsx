@@ -2,12 +2,13 @@ import React, {useContext} from 'react';
 import classes from './cart.module.css';
 import IconImg from '../../../asset/bag.png';
 import CartContext from '../../store/cart-context';
-
+import CartDetail from './CartDetail/CartDetail';
 const Cart = () => {
 const context = useContext(CartContext)
 let bool = context.totalAmount;
     return (
         <div className={classes.Cart}>
+            <CartDetail />
             <div className={classes.Icon}>
                 <img src={IconImg} alt="" />
                 {
@@ -17,11 +18,10 @@ let bool = context.totalAmount;
                 }
             </div>
             {
-                bool ? 
+                bool ?
                     <div className={classes.Price}>{context.totalPrice}</div>
                     : <div className={classes.Nomeal}>未选购商品</div>
             }
-            
             <button className={`${classes.Button} ${bool ? '' : classes.Disabled}`}>去结算</button>
         </div>
     );

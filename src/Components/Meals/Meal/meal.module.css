@@ -10,6 +10,10 @@
 
 }
 
+.Desc{
+    flex: auto;
+}
+
 .ImgBox{
     width: 280rem;
     margin-right: 10rem;

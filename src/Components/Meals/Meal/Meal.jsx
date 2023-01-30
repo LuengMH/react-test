@@ -7,15 +7,17 @@ import Counter from '../../UI/Counter/Counter';
 * */
 const Meal = ({
     data,
+    NoDetail
 }) => {
     return (
         <div className={classes.Meal}>
             <div className={classes.ImgBox}>
                 <img alt='' src={data.img} />
             </div>
-            <div>
+            <div className={classes.Desc}>
                 <h2 className={classes.Title}>{data.title}</h2>
-                <p className={classes.Desc}>{data.desc}</p>
+                {NoDetail ? null : <p className={classes.Desc}>{data.desc}</p>}
+                {/* <p className={classes.Desc}>{data.desc}</p> */}
                 <div className={classes.PriceWrap}>
                     <span className={classes.Price}>{data.price}</span>
                     {/* <div>数量</div> */}
