@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     border-radius: 50rem;
+    z-index: 1000;
 }
 
 
