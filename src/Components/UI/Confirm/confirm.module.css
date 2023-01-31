@@ -1,0 +1,42 @@
+.ConfirmOuter{
+    z-index: 9999 !important;
+}
+
+
+.Confirm{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 650rem;
+    height: 300rem;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50rem;
+}
+
+
+.Context{
+    font-size: 36rem;
+    font-weight: bold;
+}
+
+
+.Cancel, .Ok{
+    width: 180rem;
+    height: 60rem;
+    background-color: #fff;
+    border: 1rem solid #eee;
+    border-radius: 30rem;
+    cursor: pointer;
+    font-size: 26rem;
+}
+.Ok {
+    margin-left: 50rem;
+    background-color: #FCBF49;
+}

@@ -3,8 +3,8 @@ import './app.less';
 import Meals from './Components/Meals/Meals';
 import MockData from './mockData';
 import CartContext from './Components/store/cart-context';
-import FilterMeal from './Components/UI/FilterMeal/FilterMeal';
-import Cart from './Components/UI/Cart/Cart';
+import FilterMeal from './Components/FilterMeal/FilterMeal';
+import Cart from './Components/Cart/Cart';
 
 const App = () => {
     const [mealData, setMealData] = useState(null);
@@ -82,9 +82,19 @@ const App = () => {
         setMealData(newFilterMeals);
     }
 
+    const clearCart = () => {
+        const newCart = {...shopCartData}
+        // 将购物车中商品的数量清0
+        newCart.item.forEach(item => delete item.amount);
+        newCart.item = [];
+        newCart.totalAmount= 0;
+        newCart.totalPrice= 0;
+        setShopCartData(newCart);
+    }
+
     if (!mealData) return;
     return (
-        <CartContext.Provider value={{...shopCartData,addMealHandler, subMealHandler}}>
+        <CartContext.Provider value={{...shopCartData,addMealHandler, subMealHandler, clearCart}}>
             <FilterMeal onFilter={filterMealHandler} />
             <div className='app-wrap'>
                 <Meals
