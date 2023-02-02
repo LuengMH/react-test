@@ -27,7 +27,7 @@ const CartDetail = () => {
     }
 
     return (
-        <Backdrop>
+        <Backdrop onClick={(e) => cancelHandler(e)}>
             {/* 展示确认框 */}
             { showConfirm && <Confirm 
                 cancelHandler={cancelHandler}

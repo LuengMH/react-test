@@ -9,7 +9,7 @@
     border-top-right-radius: 50rem;
     display: flex;
     flex-flow: column;
-    max-height: 800rem;
+    max-height: 900rem;
 }
 
 .Header {
@@ -31,5 +31,4 @@
 .MealList {
     overflow: auto;
     /* background-color: #bfa; */
-    }
-
+}

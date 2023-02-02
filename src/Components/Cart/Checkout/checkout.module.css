@@ -1,0 +1,74 @@
+.Checkout{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: #eee;
+    padding: 20rem;
+}
+
+.Close{
+    color: #000;
+    font-size: 36rem;
+}
+
+
+.CheckoutDes {
+    background-color: #fff;
+    border-radius: 40rem;
+    padding: 0 40rem;
+    margin-top: 20rem;
+}
+
+.Header {
+    height: 80rem;
+    font-size: 24rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rem solid #f2f2f2;
+}
+
+.Meals{
+    max-height: 800rem;
+    overflow: auto;
+}
+
+
+.Footer {
+    display: flex;
+    position: relative;
+    /* align-items: center; */
+    text-align: center;
+    line-height: 120rem;
+    justify-content: flex-end;
+    height: 120rem;
+    font-size: 32rem;
+    font-weight: bold;
+    border-top: 1rem dashed #f2f2f2;
+}
+
+.Footer::after,
+.Footer::before {
+    content: '';
+    position: absolute;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 50%;
+    background-color: #eee;
+    top: -16rem;
+    left: -56rem;
+}
+
+.Footer::after{
+    right: -56rem;
+    left: auto;
+}
+
+.Footer p::before {
+    content: "合计￥";
+    font-size: 16rem;
+    font-weight: normal;
+    margin-right: 10rem;
+}
