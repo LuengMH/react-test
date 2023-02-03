@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import classes from './cart.module.css';
 import IconImg from '../../asset/bag.png';
 import CartContext from '../store/cart-context';
@@ -28,7 +28,20 @@ const hideCheckoutHandler = () => {
 const [showDetail, setShowDetail] = useState(false);
 // 控制是否拉起结算页面
 const [showCheckout, setShowCheckout] = useState(false);
+
 let bool = context.totalAmount;
+
+
+// 监听购物车数量
+useEffect(() => {
+    // 当购物车总数量为0时
+    if(context.totalAmount === 0) {
+        // 关闭购物车详情弹框
+        setShowDetail(false);
+        // 关闭结算页面
+        setShowCheckout(false);
+    }
+}, [context.totalAmount])
     return (
         <div className={classes.Cart} onClick={() => toggleDetailHandler()} >
            { showCheckout &&
