@@ -5,7 +5,7 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 document.documentElement.style.fontSize = 100 / 750 + 'vw';
 root.render(
-  //<React.StrictMode>
+  <React.StrictMode>
     <App />
-  //</React.StrictMode>
+  </React.StrictMode>
 );

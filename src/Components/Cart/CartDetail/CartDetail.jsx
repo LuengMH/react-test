@@ -23,7 +23,9 @@ const CartDetail = () => {
     }
 
     const okHandler = () => {
-        cxt.clearCart();
+        cxt.shopCarDispatch({
+            type: 'clear'
+        });
     }
 
     return (

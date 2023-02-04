@@ -33,14 +33,23 @@ const Counter = (props) => {
 
     // 点击添加按钮的事件
     const addButtonHandler = () => {
+        console.log(ctx)
         // props.onAdd(props.meal);
-        ctx.addMealHandler(props.meal);
+        // ctx.addMealHandler(props.meal);
+        ctx.shopCarDispatch({
+            type: 'add',
+            meal: props.meal
+        });
     }
 
     // 点击添加按钮的事件
     const subButtonHandler = () => {
         // props.onSub(props.meal);
-        ctx.subMealHandler(props.meal);
+        // ctx.subMealHandler(props.meal);
+        ctx.shopCarDispatch({
+            type: 'remove',
+            meal: props.meal
+        });
     }
     return (
         <div className={classes.Counter}>
